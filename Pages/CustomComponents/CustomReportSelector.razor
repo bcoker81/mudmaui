@@ -1,0 +1,52 @@
+@implements IDisposable
+@inject StateContainer StateContainer
+@inject ReportContainer ReportStateContainer
+<ReportCreator />
+
+<div class="form-group p-4">
+    @if (StateContainer.Property.Equals("overview"))
+    {
+        <h3>The Overview page was selected</h3>
+    }
+
+    else if (StateContainer.Property.Equals("entity"))
+    {
+        <h3>The Entity page was selected</h3>
+    }
+
+    else if (StateContainer.Property.Equals("vehicle"))
+    {
+        <h3>The Vehicle page was selected</h3>
+    }
+
+    else if (StateContainer.Property.Equals("attachments"))
+    {
+        <h3>The Attachments page was selected</h3>
+    }
+
+    @if (ReportStateContainer.AirReportProperty.Equals(true))
+    {
+        <h3>The AIR page was selected</h3>
+    }
+    @if (ReportStateContainer.CitationReportProperty.Equals(true))
+    {
+        <h3>The Citation page was selected</h3>
+    }
+</div>
+
+
+@code {
+    protected override void OnInitialized()
+    {
+        StateContainer.OnChange += StateHasChanged;
+        ReportStateContainer.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        StateContainer.OnChange -= StateHasChanged;
+        ReportStateContainer.OnChange -= StateHasChanged;
+    }
+
+}
+

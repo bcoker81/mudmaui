@@ -1,0 +1,59 @@
+@using AspNetCoreBlazorStateManagement.Data
+
+<MudGrid>
+    <MudItem xs="12" sm="2" md="2">
+        <MudAutocomplete T="string" Label="Highway Class" @bind-Value="HighwayClass"
+            SearchFunc="@DropdownOptions.SearchHighwayClassSelection" ResetValueOnEmptyText="@resetValueOnEmptyText"
+            CoerceText="@coerceText" CoerceValue="@coerceValue" />
+    </MudItem>
+    <MudItem xs="12" sm="2" md="2">
+        <MudTextField @bind-Value="HighwayRoadwayName" Label="Highway / Roadway Name" Variant="Variant.Text">
+        </MudTextField>
+    </MudItem>
+    <MudItem xs="12" sm="2" md="2">
+        <MudTextField @bind-Value="AddressDescription" Label="Description" Variant="Variant.Text" />
+    </MudItem>
+</MudGrid>
+<MudGrid>
+    <MudItem xs="12" sm="4" md="3">
+        <MudTextField @bind-Value="City" Label="City" Variant="Variant.Text" />
+    </MudItem>
+    <MudItem xs="12" sm="4" md="3">
+        <MudAutocomplete T="string" Label="Country" @bind-Value="CountrySelection"
+            SearchFunc="@DropdownOptions.SearchCountrySelection" ResetValueOnEmptyText="@resetValueOnEmptyText"
+            CoerceText="@coerceText" CoerceValue="@coerceValue" />
+    </MudItem>
+    <MudItem xs="12" sm="4" md="3">
+        <MudAutocomplete T="string" Label="State" @bind-Value="StateSelection"
+            SearchFunc="@DropdownOptions.SearchStateSelection" ResetValueOnEmptyText="@resetValueOnEmptyText"
+            CoerceText="@coerceText" CoerceValue="@coerceValue" />
+    </MudItem>
+    <MudItem xs="12" sm="4" md="1">
+        <MudTextField @bind-Value="Zip" Label="Zip" Variant="Variant.Text" />
+    </MudItem>
+    <MudItem xs="12" sm="4" md="1">
+        <MudTextField @bind-Value="Zip4" Label="Zip 4" Variant="Variant.Text" />
+    </MudItem>
+</MudGrid>
+<MudGrid>
+    <MudItem xs="12" sm="4" md="3">
+        <MudAutocomplete T="string" Label="County" @bind-Value="CountySelection"
+            SearchFunc="DropdownOptions.SearchCountySelection" ResetValueOnEmptyText="@resetValueOnEmptyText"
+            CoerceText="@coerceText" CoerceValue="@coerceValue" />
+    </MudItem>
+</MudGrid>
+
+@code {
+    public string? HighwayClass { get; set; }
+    public string? HighwayRoadwayName { get; set; }
+    public string? AddressDescription { get; set; }
+    public string? CountrySelection { get; set; }
+    public string? CountySelection { get; set; }
+    public string? City { get; set; }
+    public int Zip { get; set; }
+    public int Zip4 { get; set; }
+    public string? StateSelection { get; set; }
+    private bool resetValueOnEmptyText;
+    private bool coerceText;
+    private bool coerceValue;
+}

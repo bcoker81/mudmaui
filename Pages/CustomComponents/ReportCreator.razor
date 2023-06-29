@@ -1,0 +1,37 @@
+@implements IDisposable
+@inject ReportContainer StateContainer
+
+<div class="form-group p-4">
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+        @onchange="(() => SelectCitation())">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Citation</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" @onchange="(() => SelectAirReport())"
+            id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">AIR</label>
+    </div>
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        StateContainer.OnChange += StateHasChanged;
+    }
+
+    private void SelectAirReport()
+    {
+        StateContainer.AirReportProperty = !StateContainer.AirReportProperty;
+    }
+
+    private void SelectCitation()
+    {
+        StateContainer.CitationReportProperty = !StateContainer.CitationReportProperty;
+    }
+
+    public void Dispose()
+    {
+        StateContainer.OnChange -= StateHasChanged;
+    }
+}

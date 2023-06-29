@@ -1,0 +1,22 @@
+@page "/create-report-landing"
+
+@implements IDisposable
+@inject ReportContainer ReportStateContainer
+@inject StateContainer StateContainer
+
+<CreateReportSubMenu />
+
+
+@code {
+    protected override void OnInitialized()
+    {
+        ReportStateContainer.OnChange += StateHasChanged;
+        StateContainer.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        ReportStateContainer.OnChange -= StateHasChanged;
+        StateContainer.OnChange -= StateHasChanged;
+    }
+}

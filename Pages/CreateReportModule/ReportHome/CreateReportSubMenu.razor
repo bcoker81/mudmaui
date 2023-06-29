@@ -1,0 +1,53 @@
+@page "/state-container-example"
+@using AspNetCoreBlazorStateManagement.Pages.CreateReportModule.Overview
+@using AspNetCoreBlazorStateManagement.Pages.CreateReportModule.ReportHome
+@using AspNetCoreBlazorStateManagement.StateManagement
+
+@implements IDisposable
+@inject StateContainer StateContainer
+@inject ReportContainer ReportStateContainer
+
+<MudContainer MaxWidth="MaxWidth.ExtraExtraLarge">
+    <MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-6">
+        <MudTabPanel Text="Overview">
+            <OverviewHome />
+        </MudTabPanel>
+        <MudTabPanel Text="Entity">
+            <MudBadge content="2" Color="Color.Primary" Overlap="true" class="mx-6 my-4" />
+            <CreateEntity />
+        </MudTabPanel>
+        <MudTabPanel Text="Vehicle">
+            <MudText>Content Three</MudText>
+        </MudTabPanel>
+        <MudTabPanel Text="Attachments">
+            <MudText>Content Disabled</MudText>
+        </MudTabPanel>
+        <MudTabPanel Text="Citation">
+            <MudText>Content Disabled</MudText>
+        </MudTabPanel>
+        <MudTabPanel Text="AIR">
+            <MudText>Content Disabled</MudText>
+        </MudTabPanel>
+    </MudTabs>
+</MudContainer>
+
+@code {
+    protected override void OnInitialized()
+    {
+        StateContainer.OnChange += StateHasChanged;
+        ReportStateContainer.OnChange += StateHasChanged;
+    }
+
+    private void ChangePropertyValue(string selectedValue)
+    {
+        StateContainer.Property = selectedValue;
+
+    }
+
+    public void Dispose()
+    {
+        StateContainer.OnChange -= StateHasChanged;
+        ReportStateContainer.OnChange -= StateHasChanged;
+    }
+
+}
