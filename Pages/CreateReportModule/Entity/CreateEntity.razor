@@ -1,0 +1,36 @@
+@using AspNetCoreBlazorStateManagement.Data
+
+<MudGrid>
+    <MudItem xs="12" sm="12" md="12">
+        <MudAutocomplete T="string" Label="Entity Type" Value="@entityType"
+            SearchFunc="@DropdownOptions.SearchEntityType" ResetValueOnEmptyText="@resetValueOnEmptyText"
+            CoerceText="@coerceText" CoerceValue="@coerceValue" ValueChanged="@ChangeSomething" />
+    </MudItem>
+</MudGrid>
+
+@if (string.IsNullOrEmpty(entityType))
+{
+
+}
+else if (entityType.Contains("Business"))
+{
+    <CreateEntityBusiness />
+}
+else if (entityType.Contains("Person"))
+{
+    <CreateEntityPerson />
+}
+
+@code {
+    [Parameter] public string? TextValue { get; set; }
+    private OverviewViewModel OverviewVm { get; set; } = new();
+    private bool resetValueOnEmptyText;
+    private bool coerceText;
+    private bool coerceValue;
+    private string? entityType = string.Empty;
+
+    async Task ChangeSomething(string value)
+    {
+        entityType = value;
+    }
+}

@@ -9,77 +9,85 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AspNetCoreBlazorStateManagement
 build_property.RootNamespace = AspNetCoreBlazorStateManagement
-build_property.ProjectDir = c:\MAUI\AspNetCoreBlazorStateManagement\
+build_property.ProjectDir = C:\MAUI\AspNetCoreBlazorStateManagement\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\MAUI\AspNetCoreBlazorStateManagement
+build_property.MSBuildProjectDirectory = C:\MAUI\AspNetCoreBlazorStateManagement
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/App.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/Overview/OverviewHome.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/Entity/CreateEntity.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUmVwb3J0TW9kdWxlXEVudGl0eVxDcmVhdGVFbnRpdHkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/Entity/CreateEntityBusiness.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUmVwb3J0TW9kdWxlXEVudGl0eVxDcmVhdGVFbnRpdHlCdXNpbmVzcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/Entity/CreateEntityPerson.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUmVwb3J0TW9kdWxlXEVudGl0eVxDcmVhdGVFbnRpdHlQZXJzb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/Overview/OverviewHome.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUmVwb3J0TW9kdWxlXE92ZXJ2aWV3XE92ZXJ2aWV3SG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/Overview/SharedOverview/RoadwayAddress.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/Overview/SharedOverview/RoadwayAddress.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUmVwb3J0TW9kdWxlXE92ZXJ2aWV3XFNoYXJlZE92ZXJ2aWV3XFJvYWR3YXlBZGRyZXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/Overview/SharedOverview/StreetAddress.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/Overview/SharedOverview/StreetAddress.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUmVwb3J0TW9kdWxlXE92ZXJ2aWV3XFNoYXJlZE92ZXJ2aWV3XFN0cmVldEFkZHJlc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/ReportHome/CreateEntity.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUmVwb3J0TW9kdWxlXFJlcG9ydEhvbWVcQ3JlYXRlRW50aXR5LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/ReportHome/CreateReportLanding.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/ReportHome/CreateReportLanding.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUmVwb3J0TW9kdWxlXFJlcG9ydEhvbWVcQ3JlYXRlUmVwb3J0TGFuZGluZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/ReportHome/CreateReportSubMenu.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/CreateReportModule/ReportHome/CreateReportSubMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUmVwb3J0TW9kdWxlXFJlcG9ydEhvbWVcQ3JlYXRlUmVwb3J0U3ViTWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Pages/CustomComponents/CustomReportSelector.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/CustomComponents/CustomReportSelector.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tQ29tcG9uZW50c1xDdXN0b21SZXBvcnRTZWxlY3Rvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Pages/CustomComponents/Overview.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/CustomComponents/Overview.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tQ29tcG9uZW50c1xPdmVydmlldy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Pages/CustomComponents/ReportCreator.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/CustomComponents/ReportCreator.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tQ29tcG9uZW50c1xSZXBvcnRDcmVhdG9yLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Pages/Index.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Shared/SurveyPrompt.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/_Imports.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Shared/MainLayout.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-aaxmho5caa
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Shared/NavMenu.razor]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-4sl0xpj8uo
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Pages/Error.cshtml]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/MAUI/AspNetCoreBlazorStateManagement/Pages/_Host.cshtml]
+[C:/MAUI/AspNetCoreBlazorStateManagement/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

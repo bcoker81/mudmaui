@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HWdpD2S+v4ryEAHAr6Q1n0FtBl4/VlEsW/Jyb+V2SozG9laf0nDrwFX4zbgUT/QDMLaM1BT7gD10Hyf2QIoL+g==",
+  "dgSpecHash": "YhSSk+oUHUH4rZYH5GdclICh2dOUr9d2CEpB2b5I321JfK8ZmLZvCM7L2MRyvXqOH35zhAMnhBMHX0C/rs8DIg==",
   "success": true,
-  "projectFilePath": "C:\\maui\\AspNetCoreBlazorStateManagement\\AspNetCoreBlazorStateManagement.csproj",
+  "projectFilePath": "C:\\MAUI\\AspNetCoreBlazorStateManagement\\AspNetCoreBlazorStateManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cokerb\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.5\\microsoft.aspnetcore.authorization.7.0.5.nupkg.sha512",
     "C:\\Users\\cokerb\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.5\\microsoft.aspnetcore.components.7.0.5.nupkg.sha512",

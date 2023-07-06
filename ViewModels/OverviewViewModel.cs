@@ -16,4 +16,6 @@ public class OverviewViewModel
     public decimal? Longitude { get; set; }
     public string? AddressType { get; set; }
     public StreetAddressModel? StreetAddress { get; set; }
+    public List<EntityPersonModel> PersonEntities { get; set; } = new();
+    public List<EntityBusinessModel> BusinessEntities { get; set; } = new();
 }

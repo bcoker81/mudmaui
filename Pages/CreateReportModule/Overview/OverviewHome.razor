@@ -2,6 +2,9 @@
 @using AspNetCoreBlazorStateManagement.Data
 
 <MudGrid>
+    <label>@TextValue</label>
+</MudGrid>
+<MudGrid>
     <MudItem xs="12" sm="2" md="2">
         <MudTextField @bind-Value="OverviewVm.RNumber" Label="RNumber 2347839" Variant="Variant.Text" Disabled="true">
         </MudTextField>
@@ -65,9 +68,9 @@
 </MudGrid>
 <MudGrid>
     <MudItem xs="12" sm="12" md="12">
-        <MudAutocomplete T="string" Label="Address Type" @bind-Value="OverviewVm.AddressType"
+        <MudAutocomplete T="string" Label="Address Type" Value="OverviewVm.AddressType"
             SearchFunc="@DropdownOptions.SearchAddressTypes" ResetValueOnEmptyText="@resetValueOnEmptyText"
-            CoerceText="@coerceText" CoerceValue="@coerceValue" />
+            CoerceText="@coerceText" CoerceValue="@coerceValue" ValueChanged="@ChangeSomething" />
     </MudItem>
 </MudGrid>
 @if (OverviewVm.AddressType == null)
@@ -93,5 +96,10 @@ else if (OverviewVm.AddressType.Contains("1"))
         _processing = true;
         await Task.Delay(2000);
         _processing = false;
+    }
+
+    async Task ChangeSomething(string value)
+    {
+        OverviewVm.AddressType = value;
     }
 }
