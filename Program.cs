@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Web;
 using AspNetCoreBlazorStateManagement.Data;
 using AspNetCoreBlazorStateManagement.StateManagement;
 using MudBlazor.Services;
+using AspNetCoreBlazorStateManagement.ViewModels;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,7 @@ builder.Services.AddMudServices();
 // containerized in-memory state management
 builder.Services.AddSingleton<StateContainer>();
 builder.Services.AddSingleton<ReportContainer>();
-
+builder.Services.AddSingleton<OverviewViewModel>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

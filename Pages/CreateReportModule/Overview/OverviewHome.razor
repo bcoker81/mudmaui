@@ -1,78 +1,86 @@
 @using AspNetCoreBlazorStateManagement.Pages.CreateReportModule.Overview.SharedOverview
 @using AspNetCoreBlazorStateManagement.Data
 
-<MudGrid>
-    <label>@TextValue</label>
-</MudGrid>
-<MudGrid>
-    <MudItem xs="12" sm="2" md="2">
-        <MudTextField @bind-Value="OverviewVm.RNumber" Label="RNumber 2347839" Variant="Variant.Text" Disabled="true">
-        </MudTextField>
-    </MudItem>
-    <MudItem xs="12" sm="2" md="2">
-        <MudSwitch @bind-Value="OverviewVm.LPR" Color="Color.Primary" class="ma-4" T="bool" Label="LPR" />
-    </MudItem>
-    <MudItem xs="12" sm="3" md="3">
-        <MudTextField @bind-Value="OverviewVm.IncidentNumber" Label="Incident Number" Variant="Variant.Text">
-        </MudTextField>
-    </MudItem>
-</MudGrid>
-<MudGrid>
-    <MudItem xs="12" sm="2" md="2">
-        <MudAutocomplete T="string" Label="Occurred" @bind-Value="OverviewVm.OccurredWhen"
-            SearchFunc="@DropdownOptions.SearchOccurredOn" ResetValueOnEmptyText="@resetValueOnEmptyText"
-            CoerceText="@coerceText" CoerceValue="@coerceValue" />
-    </MudItem>
-    <MudItem xs="12" sm="2" md="2">
-        <MudTextField @bind-Value="OverviewVm.StartDateTime" InputType="InputType.Date" Label="Start Date / Time"
-            Variant="Variant.Text">
-        </MudTextField>
-    </MudItem>
-    <MudItem xs="12" sm="3" md="3">
-        <MudTextField @bind-Value="OverviewVm.IncidentNumber" InputType="InputType.Time" Label="Incident Number"
-            Variant="Variant.Text">
-        </MudTextField>
-    </MudItem>
-</MudGrid>
-<MudGrid>
-    <MudItem xs="12" sm="2" md="2">
-        <MudSwitch Color="Color.Primary" @bind-Value="OverviewVm.Occurred" class="ma-4" T="bool" Label="Occurred" />
-    </MudItem>
-    <MudItem xs="12" sm="2" md="2">
-        <MudAutocomplete T="string" Label="Troop" @bind-Value="OverviewVm.TroopOfOccurence"
-            SearchFunc="@DropdownOptions.SearchTroops" ResetValueOnEmptyText="@resetValueOnEmptyText"
-            CoerceText="@coerceText" CoerceValue="@coerceValue" />
-    </MudItem>
-</MudGrid>
-<MudGrid>
-    <MudItem xs="12" sm="2" md="2">
-        <MudNumericField @bind-Value="OverviewVm.Latitude" Label="Latitude" Variant="Variant.Text" Min="0" Max="10" />
-    </MudItem>
-    <MudItem xs="12" sm="2" md="2">
-        <MudNumericField @bind-Value="OverviewVm.Longitude" Label="Longitude" Variant="Variant.Text" Min="0" Max="10" />
-    </MudItem>
-    <MudItem xs="12" sm="2" md="2">
-        <MudButton Disabled="@_processing" OnClick="ProcessSomething" class="ma-4" Variant="Variant.Filled"
-            Color="Color.Primary">
-            @if (_processing)
-            {
-                <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
-                <MudText Class="ms-2">Retrieving</MudText>
-            }
-            else
-            {
-                <MudText>Get Current</MudText>
-            }
-        </MudButton>
-    </MudItem>
-</MudGrid>
-<MudGrid>
-    <MudItem xs="12" sm="12" md="12">
-        <MudAutocomplete T="string" Label="Address Type" Value="OverviewVm.AddressType"
-            SearchFunc="@DropdownOptions.SearchAddressTypes" ResetValueOnEmptyText="@resetValueOnEmptyText"
-            CoerceText="@coerceText" CoerceValue="@coerceValue" ValueChanged="@ChangeSomething" />
-    </MudItem>
-</MudGrid>
+@inject OverviewViewModel OverviewVm;
+
+@implements IDisposable
+<EditForm Model="OverviewVm">
+    <MudGrid>
+        <label>@TextValue</label>
+    </MudGrid>
+    <MudGrid>
+        <MudItem xs="12" sm="2" md="2">
+            <MudTextField @bind-Value="OverviewVm.RNumber" Label="RNumber 2347839" Variant="Variant.Text"
+                Disabled="true">
+            </MudTextField>
+        </MudItem>
+        <MudItem xs="12" sm="2" md="2">
+            <MudSwitch @bind-Value="OverviewVm.LPRChecked" Color="Color.Primary" class="ma-4" T="bool" Label="LPR" />
+        </MudItem>
+        <MudItem xs="12" sm="3" md="3">
+            <MudTextField @bind-Value="OverviewVm.IncidentNumber" Label="Incident Number" Variant="Variant.Text">
+            </MudTextField>
+        </MudItem>
+    </MudGrid>
+    <MudGrid>
+        <MudItem xs="12" sm="2" md="2">
+            <MudAutocomplete T="string" Label="Occurred" @bind-Value="OverviewVm.OccurredWhen"
+                SearchFunc="@DropdownOptions.SearchOccurredOn" ResetValueOnEmptyText="@resetValueOnEmptyText"
+                CoerceText="@coerceText" CoerceValue="@coerceValue" />
+        </MudItem>
+        <MudItem xs="12" sm="2" md="2">
+            <MudTextField @bind-Value="OverviewVm.StartDateTime" InputType="InputType.Date" Label="Start Date / Time"
+                Variant="Variant.Text">
+            </MudTextField>
+        </MudItem>
+        <MudItem xs="12" sm="3" md="3">
+            <MudTextField @bind-Value="OverviewVm.IncidentNumber" InputType="InputType.Time" Label="Incident Number"
+                Variant="Variant.Text">
+            </MudTextField>
+        </MudItem>
+    </MudGrid>
+    <MudGrid>
+        <MudItem xs="12" sm="2" md="2">
+            <MudSwitch Color="Color.Primary" @bind-Value="OverviewVm.Occurred" class="ma-4" T="bool" Label="Occurred" />
+        </MudItem>
+        <MudItem xs="12" sm="2" md="2">
+            <MudAutocomplete T="string" Label="Troop" @bind-Value="OverviewVm.TroopOfOccurence"
+                SearchFunc="@DropdownOptions.SearchTroops" ResetValueOnEmptyText="@resetValueOnEmptyText"
+                CoerceText="@coerceText" CoerceValue="@coerceValue" />
+        </MudItem>
+    </MudGrid>
+    <MudGrid>
+        <MudItem xs="12" sm="2" md="2">
+            <MudNumericField @bind-Value="OverviewVm.Latitude" Label="Latitude" Variant="Variant.Text" Min="0"
+                Max="10" />
+        </MudItem>
+        <MudItem xs="12" sm="2" md="2">
+            <MudNumericField @bind-Value="OverviewVm.Longitude" Label="Longitude" Variant="Variant.Text" Min="0"
+                Max="10" />
+        </MudItem>
+        <MudItem xs="12" sm="2" md="2">
+            <MudButton Disabled="@_processing" OnClick="ProcessSomething" class="ma-4" Variant="Variant.Filled"
+                Color="Color.Primary">
+                @if (_processing)
+                {
+                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                    <MudText Class="ms-2">Retrieving</MudText>
+                }
+                else
+                {
+                    <MudText>Get Current</MudText>
+                }
+            </MudButton>
+        </MudItem>
+    </MudGrid>
+    <MudGrid>
+        <MudItem xs="12" sm="12" md="12">
+            <MudAutocomplete T="string" Label="Address Type" Value="OverviewVm.AddressType"
+                SearchFunc="@DropdownOptions.SearchAddressTypes" ResetValueOnEmptyText="@resetValueOnEmptyText"
+                CoerceText="@coerceText" CoerceValue="@coerceValue" ValueChanged="@ChangeSomething" />
+        </MudItem>
+    </MudGrid>
+</EditForm>
 @if (OverviewVm.AddressType == null)
 {
 
@@ -89,8 +97,11 @@ else if (OverviewVm.AddressType.Contains("1"))
     private bool _processing = false;
     private bool coerceValue;
     private string? value1, value2;
-    public OverviewViewModel OverviewVm { get; set; } = new();
 
+    protected override void OnInitialized()
+    {
+        OverviewVm.OnChange += StateHasChanged;
+    }
     async Task ProcessSomething()
     {
         _processing = true;
@@ -101,5 +112,10 @@ else if (OverviewVm.AddressType.Contains("1"))
     async Task ChangeSomething(string value)
     {
         OverviewVm.AddressType = value;
+    }
+
+    public void Dispose()
+    {
+        OverviewVm.OnChange -= StateHasChanged;
     }
 }

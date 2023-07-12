@@ -57,9 +57,16 @@
 </MudGrid>
 
 @code {
+    [Inject] public OverviewViewModel OverviewVm {get;set;}
     [Parameter] public string? TextValue { get; set; }
     private bool resetValueOnEmptyText;
     private bool coerceText;
     private bool coerceValue;
     private string? value1, value2;
+
+    protected override void OnInitialized()
+    {
+        
+    }
 }
+
