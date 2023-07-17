@@ -1,1 +1,37 @@
 <h2>Create Entity Business</h2>
+
+<MudGrid>
+    <MudItem xs="12" sm="12" md="4">
+        <MudTextField @bind-Value="EntityBusinessVm.BusinessName" Label="Business Name" Variant="Variant.Text">
+        </MudTextField>
+    </MudItem>
+    <MudItem xs="12" sm="12" md="4">
+        <MudTextField @bind-Value="EntityBusinessVm.TypeOfBusiness" Label="Type of Business" Variant="Variant.Text">
+        </MudTextField>
+    </MudItem>
+</MudGrid>
+<MudGrid>
+    <MudItem xs="12" sm="12" md="4">
+        <MudTextField @bind-Value="EntityBusinessVm.EmailAddress" Label="Email Address" Variant="Variant.Text">
+        </MudTextField>
+    </MudItem>
+    <MudItem xs="12" sm="12" md="4">
+        <MudTextField @bind-Value="EntityBusinessVm.WebsiteUrl" Label="Website URL" Variant="Variant.Text">
+        </MudTextField>
+    </MudItem>
+</MudGrid>
+
+@code {
+    [Inject] public CreateEntityBusinessViewModel EntityBusinessVm { get; set; }
+    [Parameter] public string? TextValue { get; set; }
+    private bool resetValueOnEmptyText;
+    private bool coerceText;
+    private bool coerceValue;
+    private string? value1, value2;
+
+    protected override void OnInitialized()
+    {
+
+    }
+}
+

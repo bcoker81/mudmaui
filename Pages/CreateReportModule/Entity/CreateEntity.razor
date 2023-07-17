@@ -7,7 +7,35 @@
             CoerceText="@coerceText" CoerceValue="@coerceValue" ValueChanged="@ChangeSomething" />
     </MudItem>
 </MudGrid>
-
+<MudGrid>
+    <MudItem xs="12" sm="12" md="4">
+        <MudAutocomplete T="string" Label="First Name" Value="@entityType"
+            SearchFunc="@DropdownOptions.SearchEntityType" ResetValueOnEmptyText="@resetValueOnEmptyText"
+            CoerceText="@coerceText" CoerceValue="@coerceValue" ValueChanged="@ChangeSomething" />
+    </MudItem>
+    <MudItem xs="12" sm="12" md="4">
+        <MudAutocomplete T="string" Label="Middle Name" Value="@entityType"
+            SearchFunc="@DropdownOptions.SearchEntityType" ResetValueOnEmptyText="@resetValueOnEmptyText"
+            CoerceText="@coerceText" CoerceValue="@coerceValue" ValueChanged="@ChangeSomething" />
+    </MudItem>
+    <MudItem xs="12" sm="12" md="4">
+        <MudAutocomplete T="string" Label="Last Name" Value="@entityType" SearchFunc="@DropdownOptions.SearchEntityType"
+            ResetValueOnEmptyText="@resetValueOnEmptyText" CoerceText="@coerceText" CoerceValue="@coerceValue"
+            ValueChanged="@ChangeSomething" />
+    </MudItem>
+</MudGrid>
+<MudGrid>
+    <MudItem xs="12" sm="12" md="4">
+        <MudAutocomplete T="string" Label="Last Name" Value="@entityType" SearchFunc="@DropdownOptions.SearchEntityType"
+            ResetValueOnEmptyText="@resetValueOnEmptyText" CoerceText="@coerceText" CoerceValue="@coerceValue"
+            ValueChanged="@ChangeSomething" />
+    </MudItem>
+    <MudItem xs="12" sm="12" md="4">
+        <MudAutocomplete T="string" Label="Last Name" Value="@entityType" SearchFunc="@DropdownOptions.SearchEntityType"
+            ResetValueOnEmptyText="@resetValueOnEmptyText" CoerceText="@coerceText" CoerceValue="@coerceValue"
+            ValueChanged="@ChangeSomething" />
+    </MudItem>
+</MudGrid>
 @if (string.IsNullOrEmpty(entityType))
 {
 

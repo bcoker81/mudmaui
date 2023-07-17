@@ -17,6 +17,9 @@ builder.Services.AddMudServices();
 builder.Services.AddSingleton<StateContainer>();
 builder.Services.AddSingleton<ReportContainer>();
 builder.Services.AddSingleton<OverviewViewModel>();
+builder.Services.AddSingleton<CreateEntityBusinessViewModel>();
+builder.Services.AddSingleton<EntityViewModel>();
+builder.Services.AddSingleton<VehicleViewModel>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

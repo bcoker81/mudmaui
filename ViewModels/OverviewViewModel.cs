@@ -15,7 +15,7 @@ public class OverviewViewModel
     public string? OccurredWhen { get; set; }
     public TimeOnly? TimeOfIncident { get; set; }
     public string? TroopOfOccurence { get; set; }
-    public string? AddressType { get; set; }
+    public string? addressType { get; set; }
     public StreetAddressModel? StreetAddress { get; set; }
     public List<EntityPersonModel> PersonEntities { get; set; } = new();
     public List<EntityBusinessModel> BusinessEntities { get; set; } = new();
@@ -77,6 +77,16 @@ public class OverviewViewModel
         set
         {
             longitude = value;
+            NotifyStateChanged();
+        }
+    }
+
+    public string? AddressType
+    {
+        get => addressType ?? string.Empty;
+        set
+        {
+            addressType = value;
             NotifyStateChanged();
         }
     }
