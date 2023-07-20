@@ -42,6 +42,17 @@ public class DropdownOptions
         "BAR","BUSINESS","CHURCH","COMMUNICATION CENTER","CONVIENIENCE STORE","DAYCARE","DEPARTMENT STORE","PHARMACY","FACTORY","FAST FOOD","FINANCIAL INSTITUTION","FUR STORE"
     };
 
+    public static string[] cityName = {
+        "ADRIAN","ADVANCE","AGENCY","AIRPORT DRIVE","ALBA","ALBANY","ALDRICH","ALEXANDRIA","ALLENDALE","ALLENVILLE","ALMA","ALTAMONT","ALTENBURG",""
+    };
+
+    public static async Task<IEnumerable<string>> SearchCityNames(string value)
+    {
+        if (string.IsNullOrEmpty(value))
+            return new string[0];
+        return cityName.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+    }
+
     public static async Task<IEnumerable<string>> SearchTypeOfBusiness(string value)
     {
         if (string.IsNullOrEmpty(value))
