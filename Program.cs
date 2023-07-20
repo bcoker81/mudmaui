@@ -20,6 +20,7 @@ builder.Services.AddSingleton<OverviewViewModel>();
 builder.Services.AddSingleton<CreateEntityBusinessViewModel>();
 builder.Services.AddSingleton<EntityViewModel>();
 builder.Services.AddSingleton<VehicleViewModel>();
+builder.Services.AddSingleton<CreateEntityPersonViewModel>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

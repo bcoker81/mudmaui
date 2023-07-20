@@ -38,6 +38,17 @@ public class DropdownOptions
         "ADAIR CO SO KIRKSVILLE","NORTH MO DRUG TASK FORCE","KIRKSVILLE PD","CITY ATTORNEY-KIRKSVILLE","CIR CRT-MUN DIV-KIRKSVILLE","KIRKSVILLE E-911 JOIN COMM CENTER","CO PROS ATTORNEY-KIRKSVILLE","CO PROBATION DEPT-KIRKSVILLE"
     };
 
+    public static string[] typeOfBusiness = {
+        "BAR","BUSINESS","CHURCH","COMMUNICATION CENTER","CONVIENIENCE STORE","DAYCARE","DEPARTMENT STORE","PHARMACY","FACTORY","FAST FOOD","FINANCIAL INSTITUTION","FUR STORE"
+    };
+
+    public static async Task<IEnumerable<string>> SearchTypeOfBusiness(string value)
+    {
+        if (string.IsNullOrEmpty(value))
+            return new string[0];
+        return typeOfBusiness.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+    }
+
     public static async Task<IEnumerable<string>> SearchEntityType(string value)
     {
         if (string.IsNullOrEmpty(value))

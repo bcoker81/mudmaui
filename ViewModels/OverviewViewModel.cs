@@ -10,6 +10,9 @@ public class OverviewViewModel
     private string? occurred;
     private string? incidentNumber;
     private bool lprChecked;
+    private string? county;
+
+
 
     public int RNumber { get; set; }
     public string? OccurredWhen { get; set; }
@@ -20,6 +23,15 @@ public class OverviewViewModel
     public List<EntityPersonModel> PersonEntities { get; set; } = new();
     public List<EntityBusinessModel> BusinessEntities { get; set; } = new();
 
+    public string? County
+    {
+        get => county ?? string.Empty;
+        set
+        {
+            county = value;
+            NotifyStateChanged();
+        }
+    }
 
     public bool LPRChecked
     {

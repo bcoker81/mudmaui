@@ -1,35 +1,41 @@
 @using AspNetCoreBlazorStateManagement.Data
-<h2>Create Entity Person</h2>
+@implements IDisposable
+
+<MudGrid>
+    <h2>Create Entity Person</h2>
+</MudGrid>
 
 <MudGrid>
     <MudItem xs="12" sm="12" md="2">
-        <MudTextField @bind-Value="TextValue" Label="Entity Type" Variant="Variant.Text"></MudTextField>
+        <MudSwitch Color="Color.Primary" @bind-Value="EntityPersonVm.Identity" class="ma-4" T="bool" Label="Identity" />
     </MudItem>
     <MudItem xs="12" sm="12" md="2">
-        <MudSwitch Color="Color.Primary" class="ma-4" T="bool" Label="Identity" />
-    </MudItem>
-    <MudItem xs="12" sm="12" md="2">
-        <MudSwitch Color="Color.Primary" class="ma-4" T="bool" Label="Fingerprinted" />
+        <MudSwitch Color="Color.Primary" @bind-Value="EntityPersonVm.Fingerprinted" class="ma-4" T="bool"
+            Label="Fingerprinted" />
     </MudItem>
     <MudItem xs="12" sm="12" md="3">
-        <MudSwitch Color="Color.Primary" class="ma-4" T="bool" Label="Provided First Aid" />
+        <MudSwitch Color="Color.Primary" @bind-Value="EntityPersonVm.ProvidedFirstAid" class="ma-4" T="bool"
+            Label="Provided First Aid" />
     </MudItem>
     <MudItem xs="12" sm="12" md="2">
-        <MudSwitch Color="Color.Primary" class="ma-4" T="bool" Label="Photo" />
+        <MudSwitch Color="Color.Primary" @bind-Value="EntityPersonVm.Photo" class="ma-4" T="bool" Label="Photo" />
     </MudItem>
 </MudGrid>
 <MudGrid>
     <MudItem xs="12" sm="12" md="3">
-        <MudTextField @bind-Value="TextValue" Label="Last Name" Variant="Variant.Text"></MudTextField>
+        <MudTextField @bind-Value="EntityPersonVm.LastName" Label="Last Name" Variant="Variant.Outlined"></MudTextField>
     </MudItem>
     <MudItem xs="12" sm="12" md="3">
-        <MudTextField @bind-Value="TextValue" Label="First Name" Variant="Variant.Text"></MudTextField>
+        <MudTextField @bind-Value="EntityPersonVm.FirstName" Label="First Name" Variant="Variant.Outlined">
+        </MudTextField>
     </MudItem>
     <MudItem xs="12" sm="12" md="3">
-        <MudTextField @bind-Value="TextValue" Label="Middle Name" Variant="Variant.Text"></MudTextField>
+        <MudTextField @bind-Value="EntityPersonVm.MiddleName" Label="Middle Name" Variant="Variant.Outlined">
+        </MudTextField>
     </MudItem>
     <MudItem xs="12" sm="12" md="2">
-        <MudTextField @bind-Value="TextValue" Label="Gen Suffix" Variant="Variant.Text"></MudTextField>
+        <MudTextField @bind-Value="EntityPersonVm.GenSuffix" Label="Gen Suffix" Variant="Variant.Outlined">
+        </MudTextField>
     </MudItem>
 </MudGrid>
 <MudGrid>
@@ -37,27 +43,27 @@
         <MudSwitch Color="Color.Primary" class="ma-4" T="bool" Label="Date of Birth" />
     </MudItem>
     <MudItem xs="12" sm="12" md="2">
-        <MudTextField @bind-Value="TextValue" Label="Date of Birth" Variant="Variant.Text"></MudTextField>
+        <MudTextField @bind-Value="TextValue" Label="Date of Birth" Variant="Variant.Outlined"></MudTextField>
     </MudItem>
     <MudItem xs="12" sm="12" md="1">
-        <MudTextField @bind-Value="TextValue" Label="Age" Variant="Variant.Text"></MudTextField>
+        <MudTextField @bind-Value="TextValue" Label="Age" Variant="Variant.Outlined"></MudTextField>
     </MudItem>
     <MudItem xs="12" sm="12" md="1">
-        <MudTextField @bind-Value="TextValue" Label="Units" Variant="Variant.Text"></MudTextField>
+        <MudTextField @bind-Value="TextValue" Label="Units" Variant="Variant.Outlined"></MudTextField>
     </MudItem>
     <MudItem xs="12" sm="12" md="2">
-        <MudTextField @bind-Value="TextValue" Label="Race" Variant="Variant.Text"></MudTextField>
+        <MudTextField @bind-Value="TextValue" Label="Race" Variant="Variant.Outlined"></MudTextField>
     </MudItem>
     <MudItem xs="12" sm="12" md="2">
-        <MudTextField @bind-Value="TextValue" Label="Ethnicity" Variant="Variant.Text"></MudTextField>
+        <MudTextField @bind-Value="TextValue" Label="Ethnicity" Variant="Variant.Outlined"></MudTextField>
     </MudItem>
     <MudItem xs="12" sm="12" md="1">
-        <MudTextField @bind-Value="TextValue" Label="Sex" Variant="Variant.Text"></MudTextField>
+        <MudTextField @bind-Value="TextValue" Label="Sex" Variant="Variant.Outlined"></MudTextField>
     </MudItem>
 </MudGrid>
 
 @code {
-    [Inject] public OverviewViewModel OverviewVm {get;set;}
+    [Inject] public CreateEntityPersonViewModel EntityPersonVm { get; set; }
     [Parameter] public string? TextValue { get; set; }
     private bool resetValueOnEmptyText;
     private bool coerceText;
@@ -66,7 +72,12 @@
 
     protected override void OnInitialized()
     {
-        
+        EntityPersonVm.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        EntityPersonVm.OnChange -= StateHasChanged;
     }
 }
 

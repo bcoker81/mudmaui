@@ -1,4 +1,9 @@
-<h2>Create Entity Business</h2>
+@using AspNetCoreBlazorStateManagement.Data
+@implements IDisposable
+
+<MudGrid>
+    <h2>Create Entity Business</h2>
+</MudGrid>
 
 <MudGrid>
     <MudItem xs="12" sm="12" md="4">
@@ -6,8 +11,9 @@
         </MudTextField>
     </MudItem>
     <MudItem xs="12" sm="12" md="4">
-        <MudTextField @bind-Value="EntityBusinessVm.TypeOfBusiness" Label="Type of Business" Variant="Variant.Text">
-        </MudTextField>
+        <MudAutocomplete T="string" Label="Type Of Business" @bind-Value="EntityBusinessVm.TypeOfBusiness"
+            SearchFunc="@DropdownOptions.SearchTypeOfBusiness" ResetValueOnEmptyText="@resetValueOnEmptyText"
+            CoerceText="@coerceText" CoerceValue="@coerceValue" />
     </MudItem>
 </MudGrid>
 <MudGrid>
@@ -31,7 +37,12 @@
 
     protected override void OnInitialized()
     {
+        EntityBusinessVm.OnChange += StateHasChanged;
+    }
 
+    public void Dispose()
+    {
+        EntityBusinessVm.OnChange -= StateHasChanged;
     }
 }
 
